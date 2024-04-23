@@ -79,6 +79,19 @@ export default function PostForm({post}){
     // to prevent unnecessary memory use after component is of no use or "unmounted"
     
     return (
+        <>
+        <div className='text-center' >
+        {post ? 
+            (<h1 className='font-bold text-2xl'>
+                Update Post
+            </h1>)
+            : 
+            (<h1 className='font-bold text-2xl'>
+                Create Post
+            </h1>)
+        }
+            
+        </div>
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             <div className="w-2/3 px-2">
                 <Input
@@ -126,5 +139,6 @@ export default function PostForm({post}){
                 </Button>
             </div>
         </form>
+        </>
     );
 }
